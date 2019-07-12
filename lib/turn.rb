@@ -36,10 +36,10 @@ def turn(board)
   puts "Please enter 1-9:"
   user_index = gets
   input = input_to_index(user_index)
-  if valid_move?(board, input) == true
+  if !valid_move?(board, input)
+    puts "Please enter 1-9:"
+  else
     move(board, input, token = "X")
     display_board(board)
-  else
-    puts "Please enter 1-9"
   end
 end
